@@ -1,4 +1,4 @@
-#IOC (Inversion of Control) 控制反转
+# IOC (Inversion of Control) 控制反转
 ## 一、三种方式
 - **构造方法注入**（constructor injection）
 - **setter方法注入**（setter injection）
