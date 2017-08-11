@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="user" class="com.syl.ioc.constructor_injection.map.User">
+        <!--构造方法注入-->
+        <!--要通过构造方法注入方式，为当前业务对象注入其所依赖的对象，
+            需要使用 <constructor-arg>  -->
+        <constructor-arg index="0"  value="001"></constructor-arg>
+        <constructor-arg index="1"   value="syl"></constructor-arg>
+        <constructor-arg index="2" ref="food"></constructor-arg>
+    </bean>
+    <bean name="food" class="com.syl.ioc.constructor_injection.map.Food">
+        <constructor-arg name="foodMap">
+            <map>
+                <entry key="001">
+                    <value>炸酱面</value>
+                </entry>
+                <entry key="002">
+                    <value>饺子</value>
+                </entry>
+            </map>
+        </constructor-arg>
+    </bean>
+</beans>
